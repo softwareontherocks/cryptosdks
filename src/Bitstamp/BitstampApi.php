@@ -2,6 +2,7 @@
 namespace Sotr\Crypto\Bitstamp;
 
 use Sotr\Crypto\AbstractApi;
+use Sotr\Crypto\CurrencyPair;
 use Sotr\Crypto\Ticker;
 
 class BitstampApi extends AbstractApi
@@ -11,7 +12,7 @@ class BitstampApi extends AbstractApi
 		return 'https://www.bitstamp.net/api';
 	}
 
-	public function getTicker($pair = null)
+	public function getTicker(CurrencyPair $pair = null)
 	{
 		$response = $this->client->request('GET', $this->getBaseUri() . '/ticker');
 		$data = json_decode($response->getBody()->getContents());

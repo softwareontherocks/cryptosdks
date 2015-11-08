@@ -1,6 +1,8 @@
 <?php
 namespace Sotr\Crypto;
 
+use Sotr\Crypto\CurrencyPair;
+
 interface ExchangeApiInterface
 {
 	/**
@@ -14,8 +16,8 @@ interface ExchangeApiInterface
 	 * Gets the latest ticker for the given
 	 * currency pair.
 	 *
-	 * @param	string	$pair
+	 * @param	Sotr\Crypto\CurrencyPair	$pair
 	 * @return	Sotr\Crypto\Ticker
 	 */
-	public function getTicker($pair = null);
+	public function getTicker(CurrencyPair $pair = null);
 }

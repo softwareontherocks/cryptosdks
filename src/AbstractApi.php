@@ -4,6 +4,8 @@ namespace Sotr\Crypto;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 
+use Sotr\Crypto\CurrencyPair;
+
 abstract class AbstractApi implements ExchangeApiInterface
 {
 	/**
@@ -13,6 +15,14 @@ abstract class AbstractApi implements ExchangeApiInterface
 	 */
 	protected $client;
 
+	/**
+	 * The currency pair resolver.
+	 *
+	 * @var Sotr\Crypto\CurrencyPairResolverInterface
+	 */
+	protected $resolver = null;
+
+
 	public function __construct()
 	{
 		$this->setClient(new Client());
@@ -20,10 +30,15 @@ abstract class AbstractApi implements ExchangeApiInterface
 
 	abstract public function getBaseUri();
 
-	abstract public function getTicker($pair = null);
+	abstract public function getTicker(CurrencyPair $pair = null);
 
 	public function setClient(ClientInterface $client)
 	{
 		$this->client = $client;
+	}
+
+	public function setCurrencyPairResolver(CurrencyPairResolverInterface $resolver)
+	{
+		$this->resolver = $resolver;
 	}
 }
