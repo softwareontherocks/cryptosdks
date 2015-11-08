@@ -17,8 +17,8 @@ class BtceApiTest extends PHPUnit_Framework_TestCase
 			$container,
 			[new Response(200, [], json_encode(['ticker' => ['high' => 100, 'low' => 5, 'avg' => 86.42, 'vol' => 156000, 'vol_cur' => 145000, 'last' => 91.3, 'buy' => 91.32, 'sell' => 90.88, 'updated' => 1446920706, 'server_time' => 1446920706]]))]
 		);
-
-		$api = new BtceApi($client);
+		$api = new BtceApi();
+		$api->setClient($client);
 
 		$ticker = $api->getTicker();
 		$expectedTicker = new Ticker(91.3, 100, 5, 90.88, 91.32);

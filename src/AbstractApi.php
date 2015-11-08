@@ -13,12 +13,17 @@ abstract class AbstractApi implements ExchangeApiInterface
 	 */
 	protected $client;
 
-	public function __construct(ClientInterface $client = null)
+	public function __construct()
 	{
-		$this->client = $client ?: new Client();
+		$this->setClient(new Client());
 	}
 
 	abstract public function getBaseUri();
 
 	abstract public function getTicker($pair = null);
+
+	public function setClient(ClientInterface $client)
+	{
+		$this->client = $client;
+	}
 }
