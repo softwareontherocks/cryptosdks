@@ -3,7 +3,7 @@
     "description": "Exchange-agnostic cryptocurrency trading SDK written in PHP",
     "type": "library",
     "require": {
-        "guzzle/guzzle": "^3.9"
+        "guzzlehttp/guzzle": "^6.1"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.0"
@@ -14,5 +14,11 @@
             "name": "Carlos Afonso",
             "email": "carlos@softwareontherocks.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "Sotr\\Crypto\\": "src/",
+            "Sotr\\Crypto\\Tests\\": "tests/"
+        }
+    }
 }
