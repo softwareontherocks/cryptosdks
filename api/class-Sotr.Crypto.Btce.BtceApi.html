@@ -124,7 +124,7 @@
 		<b>Namespace:</b> <a href="namespace-Sotr.html">Sotr</a>\<a href="namespace-Sotr.Crypto.html">Crypto</a>\<a href="namespace-Sotr.Crypto.Btce.html">Btce</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Sotr.Crypto.Btce.BtceApi.html#11-41" title="Go to source code">Btce/BtceApi.php</a>
+			<b>Located at</b> <a href="source-class-Sotr.Crypto.Btce.BtceApi.html#11-46" title="Go to source code">Btce/BtceApi.php</a>
 		<br>
 	</div>
 
@@ -164,7 +164,7 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="getBaseUri" id="_getBaseUri">
+	<tr data-order="getPublicBaseUri" id="_getPublicBaseUri">
 
 		<td class="attributes"><code>
 			 public 
@@ -175,15 +175,53 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_getBaseUri">#</a>
-		<code><a href="source-class-Sotr.Crypto.Btce.BtceApi.html#19-22" title="Go to source code">getBaseUri</a>( )</code>
+		<a class="anchor" href="#_getPublicBaseUri">#</a>
+		<code><a href="source-class-Sotr.Crypto.Btce.BtceApi.html#19-22" title="Go to source code">getPublicBaseUri</a>( )</code>
 
 		<div class="description short">
-			<p>Return the base URI for this API.</p>
+			<p>Returns the base URI of this exchange's
+public API.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Return the base URI for this API.</p>
+			<p>Returns the base URI of this exchange's
+public API.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getTradingBaseUri" id="_getTradingBaseUri">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getTradingBaseUri">#</a>
+		<code><a href="source-class-Sotr.Crypto.Btce.BtceApi.html#24-27" title="Go to source code">getTradingBaseUri</a>( )</code>
+
+		<div class="description short">
+			<p>Returns the base URI of this exchange's
+private and/or trading API.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns the base URI of this exchange's
+private and/or trading API.</p>
 
 
 
@@ -210,7 +248,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getTicker">#</a>
-		<code><a href="source-class-Sotr.Crypto.Btce.BtceApi.html#24-40" title="Go to source code">getTicker</a>( <span><code><a href="class-Sotr.Crypto.CurrencyPair.html">Sotr\Crypto\CurrencyPair</a></code> <var>$pair</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Sotr.Crypto.Btce.BtceApi.html#29-45" title="Go to source code">getTicker</a>( <span><code><a href="class-Sotr.Crypto.CurrencyPair.html">Sotr\Crypto\CurrencyPair</a></code> <var>$pair</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Gets the latest ticker for the given
