@@ -7,14 +7,19 @@ use Sotr\Crypto\Ticker;
 
 class BitstampApi extends AbstractApi
 {
-	public function getBaseUri()
+	public function getPublicBaseUri()
+	{
+		return 'https://www.bitstamp.net/api';
+	}
+
+	public function getTradingBaseUri()
 	{
 		return 'https://www.bitstamp.net/api';
 	}
 
 	public function getTicker(CurrencyPair $pair = null)
 	{
-		$response = $this->client->request('GET', $this->getBaseUri() . '/ticker');
+		$response = $this->client->request('GET', $this->getPublicBaseUri() . '/ticker');
 		$data = json_decode($response->getBody()->getContents());
 		return new Ticker(
 			$data->last,

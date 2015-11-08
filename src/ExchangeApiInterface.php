@@ -6,11 +6,20 @@ use Sotr\Crypto\CurrencyPair;
 interface ExchangeApiInterface
 {
 	/**
-	 * Return the base URI for this API.
+	 * Returns the base URI of this exchange's
+	 * public API.
 	 *
 	 * @return	string
 	 */
-	public function getBaseUri();
+	public function getPublicBaseUri();
+
+	/**
+	 * Returns the base URI of this exchange's
+	 * private and/or trading API.
+	 *
+	 * @return	string
+	 */
+	public function getTradingBaseUri();
 
 	/**
 	 * Gets the latest ticker for the given

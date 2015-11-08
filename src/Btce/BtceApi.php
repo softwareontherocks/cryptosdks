@@ -16,9 +16,14 @@ class BtceApi extends AbstractApi
 		$this->setCurrencyPairResolver(new BtceCurrencyPairResolver());
 	}
 
-	public function getBaseUri()
+	public function getPublicBaseUri()
 	{
 		return 'https://btc-e.com/api/2';
+	}
+
+	public function getTradingBaseUri()
+	{
+		return 'https://btc-e.com/tapi';
 	}
 
 	public function getTicker(CurrencyPair $pair = null)
@@ -28,7 +33,7 @@ class BtceApi extends AbstractApi
 		}
 
 		$pairString = $this->resolver->resolve($pair);
-		$response = $this->client->request('GET', $this->getBaseUri() . '/' . $pairString . '/ticker');
+		$response = $this->client->request('GET', $this->getPublicBaseUri() . '/' . $pairString . '/ticker');
 		$data = json_decode($response->getBody()->getContents());
 		return new Ticker(
 			$data->ticker->last,

@@ -28,7 +28,9 @@ abstract class AbstractApi implements ExchangeApiInterface
 		$this->setClient(new Client());
 	}
 
-	abstract public function getBaseUri();
+	abstract public function getPublicBaseUri();
+
+	abstract public function getTradingBaseUri();
 
 	abstract public function getTicker(CurrencyPair $pair = null);
 
