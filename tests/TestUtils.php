@@ -7,6 +7,7 @@ use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Response;
+use PHPUnit_Framework_TestCase;
 
 class TestUtils
 {
@@ -17,5 +18,17 @@ class TestUtils
 		$handler = HandlerStack::create($mock);
 		$handler->push($history);
 		return new Client(['handler' => $handler]);
+	}
+
+	public static function buildMockedNonceGenerator(
+		PHPUnit_Framework_TestCase $testCase,
+		$returnedNonce = 1
+	) {
+		$nonceGeneratorMock = $testCase->getMockBuilder('Sotr\Crypto\NonceGeneratorInterface')
+			->getMock();
+		$nonceGeneratorMock->expects($testCase->once())
+			->method('generateNonce')
+			->will($testCase->returnValue($returnedNonce));
+		return $nonceGeneratorMock;
 	}
 }
