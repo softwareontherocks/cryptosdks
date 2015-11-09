@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Interface Sotr\Crypto\CurrencyPairResolverInterface</title>
+	<title>Interface Sotr\Crypto\RequestSignerInterface</title>
 
 	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
 
@@ -59,10 +59,10 @@
 
 			<h3>Interfaces</h3>
 			<ul>
-				<li class="active"><a href="class-Sotr.Crypto.CurrencyPairResolverInterface.html">CurrencyPairResolverInterface</a></li>
+				<li><a href="class-Sotr.Crypto.CurrencyPairResolverInterface.html">CurrencyPairResolverInterface</a></li>
 				<li><a href="class-Sotr.Crypto.ExchangeApiInterface.html">ExchangeApiInterface</a></li>
 				<li><a href="class-Sotr.Crypto.NonceGeneratorInterface.html">NonceGeneratorInterface</a></li>
-				<li><a href="class-Sotr.Crypto.RequestSignerInterface.html">RequestSignerInterface</a></li>
+				<li class="active"><a href="class-Sotr.Crypto.RequestSignerInterface.html">RequestSignerInterface</a></li>
 			</ul>
 
 
@@ -100,7 +100,7 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Interface CurrencyPairResolverInterface</h1>
+	<h1>Interface RequestSignerInterface</h1>
 
 
 
@@ -110,9 +110,14 @@
 
 	<div>
 		<h4>Direct known implementers</h4>
-			<a href="class-Sotr.Crypto.Btce.BtceCurrencyPairResolver.html">Sotr\Crypto\Btce\BtceCurrencyPairResolver</a>
+			<a href="class-Sotr.Crypto.AbstractRequestSigner.html">Sotr\Crypto\AbstractRequestSigner</a>
 	</div>
 
+	<div>
+		<h4>Indirect known implementers</h4>
+			<a href="class-Sotr.Crypto.Bitstamp.BitstampRequestSigner.html">Sotr\Crypto\Bitstamp\BitstampRequestSigner</a>, 
+			<a href="class-Sotr.Crypto.Btce.BtceRequestSigner.html">Sotr\Crypto\Btce\BtceRequestSigner</a>
+	</div>
 
 
 
@@ -122,7 +127,7 @@
 		<b>Namespace:</b> <a href="namespace-Sotr.html">Sotr</a>\<a href="namespace-Sotr.Crypto.html">Crypto</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Sotr.Crypto.CurrencyPairResolverInterface.html#6-18" title="Go to source code">CurrencyPairResolverInterface.php</a>
+			<b>Located at</b> <a href="source-class-Sotr.Crypto.RequestSignerInterface.html#6-26" title="Go to source code">RequestSignerInterface.php</a>
 		<br>
 	</div>
 
@@ -130,47 +135,57 @@
 
 	<table class="summary methods" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="resolve" id="_resolve">
+	<tr data-order="sign" id="_sign">
 
 		<td class="attributes"><code>
 			 public 
 
-			string
+			Psr\Http\Message\RequestInterface
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_resolve">#</a>
-		<code><a href="source-class-Sotr.Crypto.CurrencyPairResolverInterface.html#8-17" title="Go to source code">resolve</a>( <span><code><a href="class-Sotr.Crypto.CurrencyPair.html">Sotr\Crypto\CurrencyPair</a></code> <var>$pair</var></span> )</code>
+		<a class="anchor" href="#_sign">#</a>
+		<code><a href="source-class-Sotr.Crypto.RequestSignerInterface.html#8-25" title="Go to source code">sign</a>( <span>Psr\Http\Message\RequestInterface <var>$request</var></span>, <span>string <var>$key</var></span>, <span>string <var>$secret</var></span>, <span>string <var>$customerId</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$customerId</var>,…</span> )</code>
 
 		<div class="description short">
-			<p>Returns the exchange-specific text
-representation of the given currency
-pair.</p>
+			<p>Returns a signed copy of the
+provided request using the given
+API key, secret and, optionally, the
+customer's ID.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Returns the exchange-specific text
-representation of the given currency
-pair.</p>
+			<p>Returns a signed copy of the
+provided request using the given
+API key, secret and, optionally, the
+customer's ID.</p>
+
+<p>Exchanges which don't require the
+customer's ID for signing might pass
+null as this parameter.</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$pair</var></dt>
+					<dt><var>$request</var></dt>
+					<dd></dd>
+					<dt><var>$key</var></dt>
+					<dd></dd>
+					<dt><var>$secret</var></dt>
+					<dd></dd>
+					<dt><var>$customerId</var></dt>
+					<dd>$secret</dd>
+					<dt><var>$customerId</var>,…</dt>
 					<dd></dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					string
+					Psr\Http\Message\RequestInterface
 				</div>
 
-				<h4>Throws</h4>
-				<div class="list">
-					RuntimeException
-				</div>
 
 
 

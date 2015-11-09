@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Interface Sotr\Crypto\CurrencyPairResolverInterface</title>
+	<title>Class Sotr\Crypto\NonceGenerator</title>
 
 	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
 
@@ -53,13 +53,13 @@
 				<li><a href="class-Sotr.Crypto.AbstractApi.html">AbstractApi</a></li>
 				<li><a href="class-Sotr.Crypto.AbstractRequestSigner.html">AbstractRequestSigner</a></li>
 				<li><a href="class-Sotr.Crypto.CurrencyPair.html">CurrencyPair</a></li>
-				<li><a href="class-Sotr.Crypto.NonceGenerator.html">NonceGenerator</a></li>
+				<li class="active"><a href="class-Sotr.Crypto.NonceGenerator.html">NonceGenerator</a></li>
 				<li><a href="class-Sotr.Crypto.Ticker.html">Ticker</a></li>
 			</ul>
 
 			<h3>Interfaces</h3>
 			<ul>
-				<li class="active"><a href="class-Sotr.Crypto.CurrencyPairResolverInterface.html">CurrencyPairResolverInterface</a></li>
+				<li><a href="class-Sotr.Crypto.CurrencyPairResolverInterface.html">CurrencyPairResolverInterface</a></li>
 				<li><a href="class-Sotr.Crypto.ExchangeApiInterface.html">ExchangeApiInterface</a></li>
 				<li><a href="class-Sotr.Crypto.NonceGeneratorInterface.html">NonceGeneratorInterface</a></li>
 				<li><a href="class-Sotr.Crypto.RequestSignerInterface.html">RequestSignerInterface</a></li>
@@ -100,18 +100,23 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Interface CurrencyPairResolverInterface</h1>
+	<h1>Class NonceGenerator</h1>
+
+
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b><span>Sotr\Crypto\NonceGenerator</span></b>			
+			 implements 
+				<a href="class-Sotr.Crypto.NonceGeneratorInterface.html"><span>Sotr\Crypto\NonceGeneratorInterface</span></a>
+			
+			
+		</dd>
+	</dl>
 
 
 
 
-
-
-
-	<div>
-		<h4>Direct known implementers</h4>
-			<a href="class-Sotr.Crypto.Btce.BtceCurrencyPairResolver.html">Sotr\Crypto\Btce\BtceCurrencyPairResolver</a>
-	</div>
 
 
 
@@ -122,7 +127,7 @@
 		<b>Namespace:</b> <a href="namespace-Sotr.html">Sotr</a>\<a href="namespace-Sotr.Crypto.html">Crypto</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Sotr.Crypto.CurrencyPairResolverInterface.html#6-18" title="Go to source code">CurrencyPairResolverInterface.php</a>
+			<b>Located at</b> <a href="source-class-Sotr.Crypto.NonceGenerator.html#4-10" title="Go to source code">NonceGenerator.php</a>
 		<br>
 	</div>
 
@@ -130,7 +135,7 @@
 
 	<table class="summary methods" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="resolve" id="_resolve">
+	<tr data-order="generateNonce" id="_generateNonce">
 
 		<td class="attributes"><code>
 			 public 
@@ -141,39 +146,28 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_resolve">#</a>
-		<code><a href="source-class-Sotr.Crypto.CurrencyPairResolverInterface.html#8-17" title="Go to source code">resolve</a>( <span><code><a href="class-Sotr.Crypto.CurrencyPair.html">Sotr\Crypto\CurrencyPair</a></code> <var>$pair</var></span> )</code>
+		<a class="anchor" href="#_generateNonce">#</a>
+		<code><a href="source-class-Sotr.Crypto.NonceGenerator.html#6-9" title="Go to source code">generateNonce</a>( )</code>
 
 		<div class="description short">
-			<p>Returns the exchange-specific text
-representation of the given currency
-pair.</p>
+			<p>Generates a nonce.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Returns the exchange-specific text
-representation of the given currency
-pair.</p>
+			<p>Generates a nonce.</p>
 
 
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$pair</var></dt>
-					<dd></dd>
-				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
 					string
 				</div>
 
-				<h4>Throws</h4>
-				<div class="list">
-					RuntimeException
-				</div>
 
 
 
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Sotr.Crypto.NonceGeneratorInterface.html#_generateNonce">Sotr\Crypto\NonceGeneratorInterface::generateNonce()</a></code></div>
 		</div>
 		</div></td>
 	</tr>

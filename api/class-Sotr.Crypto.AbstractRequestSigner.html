@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Sotr\Crypto\AbstractRequestSigner</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li class="active">
+					<a href="namespace-Sotr.html">
+						Sotr<span></span>
+					</a>
+
+						<ul>
+				<li class="active">
+					<a href="namespace-Sotr.Crypto.html">
+						Crypto<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Sotr.Crypto.Bitstamp.html">
+						Bitstamp					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Sotr.Crypto.Btce.html">
+						Btce					</a>
+
+						</li>
+							</ul></li></ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Sotr.Crypto.AbstractApi.html">AbstractApi</a></li>
+				<li class="active"><a href="class-Sotr.Crypto.AbstractRequestSigner.html">AbstractRequestSigner</a></li>
+				<li><a href="class-Sotr.Crypto.CurrencyPair.html">CurrencyPair</a></li>
+				<li><a href="class-Sotr.Crypto.NonceGenerator.html">NonceGenerator</a></li>
+				<li><a href="class-Sotr.Crypto.Ticker.html">Ticker</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Sotr.Crypto.CurrencyPairResolverInterface.html">CurrencyPairResolverInterface</a></li>
+				<li><a href="class-Sotr.Crypto.ExchangeApiInterface.html">ExchangeApiInterface</a></li>
+				<li><a href="class-Sotr.Crypto.NonceGeneratorInterface.html">NonceGeneratorInterface</a></li>
+				<li><a href="class-Sotr.Crypto.RequestSignerInterface.html">RequestSignerInterface</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Sotr.Crypto.html" title="Summary of Sotr\Crypto"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class AbstractRequestSigner</h1>
+
+
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b><span>Sotr\Crypto\AbstractRequestSigner</span></b>			
+			 implements 
+				<a href="class-Sotr.Crypto.RequestSignerInterface.html"><span>Sotr\Crypto\RequestSignerInterface</span></a>
+			
+			
+		</dd>
+	</dl>
+
+
+	<div>
+		<h4>Direct known subclasses</h4>
+			<a href="class-Sotr.Crypto.Bitstamp.BitstampRequestSigner.html">Sotr\Crypto\Bitstamp\BitstampRequestSigner</a>, 
+			<a href="class-Sotr.Crypto.Btce.BtceRequestSigner.html">Sotr\Crypto\Btce\BtceRequestSigner</a>
+	</div>
+
+
+
+
+
+
+	<div class="info">
+		<b>Abstract</b><br>
+		
+		<b>Namespace:</b> <a href="namespace-Sotr.html">Sotr</a>\<a href="namespace-Sotr.Crypto.html">Crypto</a><br>
+		
+
+			<b>Located at</b> <a href="source-class-Sotr.Crypto.AbstractRequestSigner.html#9-35" title="Go to source code">AbstractRequestSigner.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Sotr.Crypto.AbstractRequestSigner.html#18-21" title="Go to source code">__construct</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="sign" id="_sign">
+
+		<td class="attributes"><code>
+			abstract public 
+
+			Psr\Http\Message\RequestInterface
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_sign">#</a>
+		<code><a href="source-class-Sotr.Crypto.AbstractRequestSigner.html#23" title="Go to source code">sign</a>( <span>Psr\Http\Message\RequestInterface <var>$request</var></span>, <span>string <var>$key</var></span>, <span>string <var>$secret</var></span>, <span>string <var>$customerId</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$customerId</var>,…</span> )</code>
+
+		<div class="description short">
+			<p>Returns a signed copy of the
+provided request using the given
+API key, secret and, optionally, the
+customer's ID.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns a signed copy of the
+provided request using the given
+API key, secret and, optionally, the
+customer's ID.</p>
+
+<p>Exchanges which don't require the
+customer's ID for signing might pass
+null as this parameter.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$request</var></dt>
+					<dd></dd>
+					<dt><var>$key</var></dt>
+					<dd></dd>
+					<dt><var>$secret</var></dt>
+					<dd></dd>
+					<dt><var>$customerId</var></dt>
+					<dd>$secret</dd>
+					<dt><var>$customerId</var>,…</dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					Psr\Http\Message\RequestInterface
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-Sotr.Crypto.RequestSignerInterface.html#_sign">Sotr\Crypto\RequestSignerInterface::sign()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setNonceGenerator" id="_setNonceGenerator">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setNonceGenerator">#</a>
+		<code><a href="source-class-Sotr.Crypto.AbstractRequestSigner.html#25-34" title="Go to source code">setNonceGenerator</a>( <span><code><a href="class-Sotr.Crypto.NonceGeneratorInterface.html">Sotr\Crypto\NonceGeneratorInterface</a></code> <var>$generator</var></span> )</code>
+
+		<div class="description short">
+			<p>Set the nonce generator used
+by this signer.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Set the nonce generator used
+by this signer.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$generator</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="nonceGenerator" id="$nonceGenerator">
+		<td class="attributes"><code>
+			protected  
+			<code><a href="class-Sotr.Crypto.NonceGeneratorInterface.html">Sotr\Crypto\NonceGeneratorInterface</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Sotr.Crypto.AbstractRequestSigner.html#11-16" title="Go to source code"><var>$nonceGenerator</var></a>
+
+			<div class="description short">
+				<p>The nonce generator.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>The nonce generator.</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$nonceGenerator" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>
