@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Class Sotr\Crypto\NonceGenerator</title>
+	<title>Class Sotr\Crypto\TimestampNonceGenerator</title>
 
 	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
 
@@ -53,8 +53,8 @@
 				<li><a href="class-Sotr.Crypto.AbstractApi.html">AbstractApi</a></li>
 				<li><a href="class-Sotr.Crypto.AbstractRequestSigner.html">AbstractRequestSigner</a></li>
 				<li><a href="class-Sotr.Crypto.CurrencyPair.html">CurrencyPair</a></li>
-				<li class="active"><a href="class-Sotr.Crypto.NonceGenerator.html">NonceGenerator</a></li>
 				<li><a href="class-Sotr.Crypto.Ticker.html">Ticker</a></li>
+				<li class="active"><a href="class-Sotr.Crypto.TimestampNonceGenerator.html">TimestampNonceGenerator</a></li>
 			</ul>
 
 			<h3>Interfaces</h3>
@@ -100,13 +100,18 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class NonceGenerator</h1>
+	<h1>Class TimestampNonceGenerator</h1>
 
 
+	<div class="description">
+	<p>A simple implementation of a nonce
+generator which returns the current
+UNIX timestamp as the nonce.</p>
+	</div>
 
 	<dl class="tree">
 		<dd style="padding-left:0px">
-<b><span>Sotr\Crypto\NonceGenerator</span></b>			
+<b><span>Sotr\Crypto\TimestampNonceGenerator</span></b>			
 			 implements 
 				<a href="class-Sotr.Crypto.NonceGeneratorInterface.html"><span>Sotr\Crypto\NonceGeneratorInterface</span></a>
 			
@@ -127,7 +132,7 @@
 		<b>Namespace:</b> <a href="namespace-Sotr.html">Sotr</a>\<a href="namespace-Sotr.Crypto.html">Crypto</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Sotr.Crypto.NonceGenerator.html#4-10" title="Go to source code">NonceGenerator.php</a>
+			<b>Located at</b> <a href="source-class-Sotr.Crypto.TimestampNonceGenerator.html#4-15" title="Go to source code">TimestampNonceGenerator.php</a>
 		<br>
 	</div>
 
@@ -147,7 +152,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_generateNonce">#</a>
-		<code><a href="source-class-Sotr.Crypto.NonceGenerator.html#6-9" title="Go to source code">generateNonce</a>( )</code>
+		<code><a href="source-class-Sotr.Crypto.TimestampNonceGenerator.html#11-14" title="Go to source code">generateNonce</a>( )</code>
 
 		<div class="description short">
 			<p>Generates a nonce.</p>
