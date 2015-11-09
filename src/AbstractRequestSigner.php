@@ -3,7 +3,7 @@ namespace Sotr\Crypto;
 
 use Psr\Http\Message\RequestInterface;
 
-use Sotr\Crypto\NonceGenerator;
+use Sotr\Crypto\TimestampNonceGenerator;
 use Sotr\Crypto\NonceGeneratorInterface;
 
 abstract class AbstractRequestSigner implements RequestSignerInterface
@@ -17,7 +17,7 @@ abstract class AbstractRequestSigner implements RequestSignerInterface
 
 	public function __construct()
 	{
-		$this->nonceGenerator = new NonceGenerator();
+		$this->nonceGenerator = new TimestampNonceGenerator();
 	}
 
 	abstract public function sign(RequestInterface $request, $key, $secret, $customerId = null);
