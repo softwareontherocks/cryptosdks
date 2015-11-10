@@ -34,6 +34,6 @@ class BitstampApi extends AbstractApi
 
 	public function getBalance()
 	{
-		return RuntimeException('Method not allowed in this exchange');
+		return new RuntimeException('Method not allowed in this exchange');
 	}
 }
