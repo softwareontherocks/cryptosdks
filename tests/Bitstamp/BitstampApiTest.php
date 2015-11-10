@@ -29,4 +29,14 @@ class BitstampApiTest extends PHPUnit_Framework_TestCase
 
 		$this->assertEquals($expectedTicker, $ticker);
 	}
+
+	/**
+	 * @expectedException	RuntimeException
+	 */
+	public function testGetBalanceThrowsAnException()
+	{
+		$api = new BitstampApi();
+
+		$api->getBalance();
+	}
 }
