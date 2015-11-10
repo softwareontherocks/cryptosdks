@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Class Sotr\Crypto\TimestampNonceGenerator</title>
+	<title>Class Sotr\Crypto\AccountBalance</title>
 
 	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
 
@@ -52,10 +52,10 @@
 			<ul>
 				<li><a href="class-Sotr.Crypto.AbstractApi.html">AbstractApi</a></li>
 				<li><a href="class-Sotr.Crypto.AbstractRequestSigner.html">AbstractRequestSigner</a></li>
-				<li><a href="class-Sotr.Crypto.AccountBalance.html">AccountBalance</a></li>
+				<li class="active"><a href="class-Sotr.Crypto.AccountBalance.html">AccountBalance</a></li>
 				<li><a href="class-Sotr.Crypto.CurrencyPair.html">CurrencyPair</a></li>
 				<li><a href="class-Sotr.Crypto.Ticker.html">Ticker</a></li>
-				<li class="active"><a href="class-Sotr.Crypto.TimestampNonceGenerator.html">TimestampNonceGenerator</a></li>
+				<li><a href="class-Sotr.Crypto.TimestampNonceGenerator.html">TimestampNonceGenerator</a></li>
 			</ul>
 
 			<h3>Interfaces</h3>
@@ -101,24 +101,15 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class TimestampNonceGenerator</h1>
+	<h1>Class AccountBalance</h1>
 
 
 	<div class="description">
-	<p>A simple implementation of a nonce
-generator which returns the current
-UNIX timestamp as the nonce.</p>
+	<p>This class represents the current
+balance of different currencies in
+a given user account.</p>
 	</div>
 
-	<dl class="tree">
-		<dd style="padding-left:0px">
-<b><span>Sotr\Crypto\TimestampNonceGenerator</span></b>			
-			 implements 
-				<a href="class-Sotr.Crypto.NonceGeneratorInterface.html"><span>Sotr\Crypto\NonceGeneratorInterface</span></a>
-			
-			
-		</dd>
-	</dl>
 
 
 
@@ -133,7 +124,7 @@ UNIX timestamp as the nonce.</p>
 		<b>Namespace:</b> <a href="namespace-Sotr.html">Sotr</a>\<a href="namespace-Sotr.Crypto.html">Crypto</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Sotr.Crypto.TimestampNonceGenerator.html#4-15" title="Go to source code">TimestampNonceGenerator.php</a>
+			<b>Located at</b> <a href="source-class-Sotr.Crypto.AccountBalance.html#4-55" title="Go to source code">AccountBalance.php</a>
 		<br>
 	</div>
 
@@ -141,39 +132,120 @@ UNIX timestamp as the nonce.</p>
 
 	<table class="summary methods" id="methods">
 	<caption>Methods summary</caption>
-	<tr data-order="generateNonce" id="_generateNonce">
+	<tr data-order="__construct" id="___construct">
 
 		<td class="attributes"><code>
 			 public 
 
-			string
+			
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_generateNonce">#</a>
-		<code><a href="source-class-Sotr.Crypto.TimestampNonceGenerator.html#11-14" title="Go to source code">generateNonce</a>( )</code>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Sotr.Crypto.AccountBalance.html#19-31" title="Go to source code">__construct</a>( <span>array <var>$balance</var> = []</span> )</code>
 
 		<div class="description short">
-			<p>Generates a nonce.</p>
+			<p>Constructs a new balance instance,
+optionally with the provided starting
+balance.</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Generates a nonce.</p>
+			<p>Constructs a new balance instance,
+optionally with the provided starting
+balance.</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$balance</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get" id="_get">
+
+		<td class="attributes"><code>
+			 public 
+
+			float
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get">#</a>
+		<code><a href="source-class-Sotr.Crypto.AccountBalance.html#33-43" title="Go to source code">get</a>( <span>string <var>$currency</var></span> )</code>
+
+		<div class="description short">
+			<p>Returns the balance of the given
+currency.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns the balance of the given
+currency.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$currency</var></dt>
+					<dd></dd>
+				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					string
+					float
 				</div>
 
 
 
 
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-Sotr.Crypto.NonceGeneratorInterface.html#_generateNonce">Sotr\Crypto\NonceGeneratorInterface::generateNonce()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="set" id="_set">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_set">#</a>
+		<code><a href="source-class-Sotr.Crypto.AccountBalance.html#45-54" title="Go to source code">set</a>( <span>string <var>$currency</var></span>, <span>float <var>$value</var></span> )</code>
+
+		<div class="description short">
+			<p>Sets the balance of the given currency.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Sets the balance of the given currency.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$currency</var></dt>
+					<dd></dd>
+					<dt><var>$value</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
 		</div>
 		</div></td>
 	</tr>

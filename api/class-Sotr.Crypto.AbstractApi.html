@@ -52,6 +52,7 @@
 			<ul>
 				<li class="active"><a href="class-Sotr.Crypto.AbstractApi.html">AbstractApi</a></li>
 				<li><a href="class-Sotr.Crypto.AbstractRequestSigner.html">AbstractRequestSigner</a></li>
+				<li><a href="class-Sotr.Crypto.AccountBalance.html">AccountBalance</a></li>
 				<li><a href="class-Sotr.Crypto.CurrencyPair.html">CurrencyPair</a></li>
 				<li><a href="class-Sotr.Crypto.Ticker.html">Ticker</a></li>
 				<li><a href="class-Sotr.Crypto.TimestampNonceGenerator.html">TimestampNonceGenerator</a></li>
@@ -132,7 +133,7 @@
 		<b>Namespace:</b> <a href="namespace-Sotr.html">Sotr</a>\<a href="namespace-Sotr.Crypto.html">Crypto</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Sotr.Crypto.AbstractApi.html#9-48" title="Go to source code">AbstractApi.php</a>
+			<b>Located at</b> <a href="source-class-Sotr.Crypto.AbstractApi.html#9-68" title="Go to source code">AbstractApi.php</a>
 		<br>
 	</div>
 
@@ -152,7 +153,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Sotr.Crypto.AbstractApi.html#26-29" title="Go to source code">__construct</a>( )</code>
+		<code><a href="source-class-Sotr.Crypto.AbstractApi.html#39-44" title="Go to source code">__construct</a>( <span> <var>$key</var> = <span class="php-keyword1">null</span></span>, <span> <var>$secret</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -182,7 +183,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getPublicBaseUri">#</a>
-		<code><a href="source-class-Sotr.Crypto.AbstractApi.html#31" title="Go to source code">getPublicBaseUri</a>( )</code>
+		<code><a href="source-class-Sotr.Crypto.AbstractApi.html#46" title="Go to source code">getPublicBaseUri</a>( )</code>
 
 		<div class="description short">
 			<p>Returns the base URI of this exchange's
@@ -220,7 +221,7 @@ public API.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getTradingBaseUri">#</a>
-		<code><a href="source-class-Sotr.Crypto.AbstractApi.html#33" title="Go to source code">getTradingBaseUri</a>( )</code>
+		<code><a href="source-class-Sotr.Crypto.AbstractApi.html#48" title="Go to source code">getTradingBaseUri</a>( )</code>
 
 		<div class="description short">
 			<p>Returns the base URI of this exchange's
@@ -258,7 +259,7 @@ private and/or trading API.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getTicker">#</a>
-		<code><a href="source-class-Sotr.Crypto.AbstractApi.html#35" title="Go to source code">getTicker</a>( <span><code><a href="class-Sotr.Crypto.CurrencyPair.html">Sotr\Crypto\CurrencyPair</a></code> <var>$pair</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Sotr.Crypto.AbstractApi.html#50" title="Go to source code">getTicker</a>( <span><code><a href="class-Sotr.Crypto.CurrencyPair.html">Sotr\Crypto\CurrencyPair</a></code> <var>$pair</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Gets the latest ticker for the given
@@ -292,16 +293,16 @@ currency pair.</p>
 	<tr data-order="getBalance" id="_getBalance">
 
 		<td class="attributes"><code>
-			 public 
+			abstract public 
 
-			Sotr\Crypto\AccountBalance
+			<code><a href="class-Sotr.Crypto.AccountBalance.html">Sotr\Crypto\AccountBalance</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getBalance">#</a>
-		<code><a href="source-class-Sotr.Crypto.AbstractApi.html#37" title="Go to source code">getBalance</a>( )</code>
+		<code><a href="source-class-Sotr.Crypto.AbstractApi.html#52" title="Go to source code">getBalance</a>( )</code>
 
 		<div class="description short">
 			<p>Gets the user account's balance.</p>
@@ -314,7 +315,7 @@ currency pair.</p>
 
 				<h4>Returns</h4>
 				<div class="list">
-					Sotr\Crypto\AccountBalance
+					<code><a href="class-Sotr.Crypto.AccountBalance.html">Sotr\Crypto\AccountBalance</a></code>
 				</div>
 
 
@@ -337,7 +338,7 @@ currency pair.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setClient">#</a>
-		<code><a href="source-class-Sotr.Crypto.AbstractApi.html#39-42" title="Go to source code">setClient</a>( <span>GuzzleHttp\ClientInterface <var>$client</var></span> )</code>
+		<code><a href="source-class-Sotr.Crypto.AbstractApi.html#54-57" title="Go to source code">setClient</a>( <span>GuzzleHttp\ClientInterface <var>$client</var></span> )</code>
 
 		<div class="description short">
 			
@@ -367,7 +368,7 @@ currency pair.</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setCurrencyPairResolver">#</a>
-		<code><a href="source-class-Sotr.Crypto.AbstractApi.html#44-47" title="Go to source code">setCurrencyPairResolver</a>( <span><code><a href="class-Sotr.Crypto.CurrencyPairResolverInterface.html">Sotr\Crypto\CurrencyPairResolverInterface</a></code> <var>$resolver</var></span> )</code>
+		<code><a href="source-class-Sotr.Crypto.AbstractApi.html#59-62" title="Go to source code">setCurrencyPairResolver</a>( <span><code><a href="class-Sotr.Crypto.CurrencyPairResolverInterface.html">Sotr\Crypto\CurrencyPairResolverInterface</a></code> <var>$resolver</var></span> )</code>
 
 		<div class="description short">
 			
@@ -447,6 +448,56 @@ currency pair.</p>
 			<div>
 				<a href="#$resolver" class="anchor">#</a>
 				<code><span class="php-keyword1">null</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="key" id="$key">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Sotr.Crypto.AbstractApi.html#25-30" title="Go to source code"><var>$key</var></a>
+
+			<div class="description short">
+				<p>The customer's API key.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>The customer's API key.</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$key" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="secret" id="$secret">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Sotr.Crypto.AbstractApi.html#32-37" title="Go to source code"><var>$secret</var></a>
+
+			<div class="description short">
+				<p>The customer's API secret.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>The customer's API secret.</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$secret" class="anchor">#</a>
+				<code></code>
 			</div>
 		</td>
 	</tr>
