@@ -4,6 +4,7 @@ namespace Sotr\Crypto\Tests\Btce;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit_Framework_TestCase;
 
+use Sotr\Crypto\AccountBalance;
 use Sotr\Crypto\CurrencyPair;
 use Sotr\Crypto\Btce\BtceApi;
 use Sotr\Crypto\Tests\TestUtils;
@@ -50,5 +51,28 @@ class BtceApiTest extends PHPUnit_Framework_TestCase
 		$api = new BtceApi();
 
 		$api->getTicker();
+	}
+
+	public function testGetBalance()
+	{
+		$container = [];
+		$client = TestUtils::buildMockedClient(
+			$container,
+			[new Response(200, [], json_encode(['success' => 1, 'return' => ['funds' => ['usd' => 100, 'btc' => 200, 'ltc' => 50]]]))]
+		);
+
+		$api = new BtceApi('key', 'secret');
+		$api->setClient($client);
+
+		$balance = $api->getBalance();
+		$expectedBalance = new AccountBalance(['usd' => 100, 'btc' => 200, 'ltc' => 50]);
+
+		$this->assertCount(1, $container);
+		$this->assertEquals('POST', $container[0]['request']->getMethod());
+		$this->assertEquals('https://btc-e.com/tapi', $container[0]['request']->getUri());
+		parse_str($container[0]['request']->getBody()->getContents(), $body);
+		$this->assertEquals('getInfo', $body['method']);
+
+		$this->assertEquals($balance, $expectedBalance);
 	}
 }

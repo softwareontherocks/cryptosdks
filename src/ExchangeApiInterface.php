@@ -29,4 +29,11 @@ interface ExchangeApiInterface
 	 * @return	Sotr\Crypto\Ticker
 	 */
 	public function getTicker(CurrencyPair $pair = null);
+
+	/**
+	 * Gets the user account's balance.
+	 *
+	 * @return	Sotr\Crypto\AccountBalance
+	 */
+	public function getBalance();
 }

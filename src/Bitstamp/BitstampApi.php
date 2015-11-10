@@ -1,6 +1,8 @@
 <?php
 namespace Sotr\Crypto\Bitstamp;
 
+use RuntimeException;
+
 use Sotr\Crypto\AbstractApi;
 use Sotr\Crypto\CurrencyPair;
 use Sotr\Crypto\Ticker;
@@ -28,5 +30,10 @@ class BitstampApi extends AbstractApi
 			$data->bid,
 			$data->ask
 		);
+	}
+
+	public function getBalance()
+	{
+		return RuntimeException('Method not allowed in this exchange');
 	}
 }

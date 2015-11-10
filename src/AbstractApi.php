@@ -22,9 +22,24 @@ abstract class AbstractApi implements ExchangeApiInterface
 	 */
 	protected $resolver = null;
 
+	/**
+	 * The customer's API key.
+	 *
+	 * @var	string
+	 */
+	protected $key;
 
-	public function __construct()
+	/**
+	 * The customer's API secret.
+	 *
+	 * @var string
+	 */
+	protected $secret;
+
+	public function __construct($key = null, $secret = null)
 	{
+		$this->key = $key;
+		$this->secret = $secret;
 		$this->setClient(new Client());
 	}
 
@@ -33,6 +48,8 @@ abstract class AbstractApi implements ExchangeApiInterface
 	abstract public function getTradingBaseUri();
 
 	abstract public function getTicker(CurrencyPair $pair = null);
+
+	abstract public function getBalance();
 
 	public function setClient(ClientInterface $client)
 	{

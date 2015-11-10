@@ -4,15 +4,16 @@ namespace Sotr\Crypto\Btce;
 use RuntimeException;
 
 use Sotr\Crypto\AbstractApi;
+use Sotr\Crypto\AccountBalance;
 use Sotr\Crypto\Btce\BtceCurrencyPairResolver;
 use Sotr\Crypto\CurrencyPair;
 use Sotr\Crypto\Ticker;
 
 class BtceApi extends AbstractApi
 {
-	public function __construct()
+	public function __construct($key = null, $secret = null)
 	{
-		parent::__construct();
+		parent::__construct($key, $secret);
 		$this->setCurrencyPairResolver(new BtceCurrencyPairResolver());
 	}
 
@@ -42,5 +43,20 @@ class BtceApi extends AbstractApi
 			$data->ticker->sell,
 			$data->ticker->buy
 		);
+	}
+
+	public function getBalance()
+	{
+		$params = ['method' => 'getInfo'];
+		$request = new \GuzzleHttp\Psr7\Request('POST', $this->getTradingBaseUri(), ['Content-Type' => 'application/x-www-form-urlencoded'], http_build_query($params));
+		$signer = new BtceRequestSigner();
+		$signed = $signer->sign($request, $this->key, $this->secret);
+		$response = $this->client->send($signed);
+		$data = json_decode($response->getBody()->getContents());
+		$balance = new AccountBalance();
+		foreach ($data->return->funds as $currency => $value) {
+			$balance->set($currency, $value);
+		}
+		return $balance;
 	}
 }
