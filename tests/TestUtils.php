@@ -31,4 +31,15 @@ class TestUtils
 			->will($testCase->returnValue($returnedNonce));
 		return $nonceGeneratorMock;
 	}
+
+	public static function buildMockedRequestSigner(
+		PHPUnit_Framework_TestCase $testCase
+	) {
+		$requestSignerMock = $testCase->getMockBuilder('Sotr\Crypto\RequestSignerInterface')
+			->getMock();
+		$requestSignerMock->expects($testCase->once())
+			->method('sign')
+			->will($testCase->returnArgument(0));
+		return $requestSignerMock;
+	}
 }

@@ -15,6 +15,7 @@ class BtceApi extends AbstractApi
 	{
 		parent::__construct($key, $secret);
 		$this->setCurrencyPairResolver(new BtceCurrencyPairResolver());
+		$this->setRequestSigner(new BtceRequestSigner());
 	}
 
 	public function getPublicBaseUri()
@@ -49,8 +50,7 @@ class BtceApi extends AbstractApi
 	{
 		$params = ['method' => 'getInfo'];
 		$request = new \GuzzleHttp\Psr7\Request('POST', $this->getTradingBaseUri(), ['Content-Type' => 'application/x-www-form-urlencoded'], http_build_query($params));
-		$signer = new BtceRequestSigner();
-		$signed = $signer->sign($request, $this->key, $this->secret);
+		$signed = $this->signer->sign($request, $this->key, $this->secret);
 		$response = $this->client->send($signed);
 		$data = json_decode($response->getBody()->getContents());
 		$balance = new AccountBalance();

@@ -61,8 +61,11 @@ class BtceApiTest extends PHPUnit_Framework_TestCase
 			[new Response(200, [], json_encode(['success' => 1, 'return' => ['funds' => ['usd' => 100, 'btc' => 200, 'ltc' => 50]]]))]
 		);
 
+		$signerMock = TestUtils::buildMockedRequestSigner($this);
+
 		$api = new BtceApi('key', 'secret');
 		$api->setClient($client);
+		$api->setRequestSigner($signerMock);
 
 		$balance = $api->getBalance();
 		$expectedBalance = new AccountBalance(['usd' => 100, 'btc' => 200, 'ltc' => 50]);
